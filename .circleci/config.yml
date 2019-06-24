@@ -6,7 +6,7 @@ jobs:
   build:
     docker:
       # specify the version
-      - image: circleci/golang:1.4
+      - image: circleci/golang:1.7
 
       - image: circleci/postgres:10.6-alpine
         environment: # environment variables for primary container
