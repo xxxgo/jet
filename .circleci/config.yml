@@ -30,7 +30,6 @@ jobs:
             go get github.com/lib/pq
             go get github.com/pkg/profile
             go get gotest.tools/assert
-            go get github.com/serenize/snaker
             go get github.com/davecgh/go-spew/spew
             go get github.com/jstemmer/go-junit-report
 
