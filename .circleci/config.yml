@@ -39,7 +39,7 @@ jobs:
       - run: mkdir -p $TEST_RESULTS/unit-tests
       - run: mkdir -p $TEST_RESULTS/integration-tests
 
-      - run: go test -v 2>&1 | go-junit-report > $TEST_RESULTS/unit-tests/results.xml
+      - run: go test -v #2>&1 | go-junit-report > $TEST_RESULTS/unit-tests/results.xml
 
       - run:
           name: Waiting for Postgres to be ready
