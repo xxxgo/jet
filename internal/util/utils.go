@@ -9,15 +9,15 @@ func ToGoIdentifier(databaseIdentifier string) string {
 	if len(databaseIdentifier) == 0 {
 		return databaseIdentifier
 	}
-	databaseIdentifier = strings.ReplaceAll(databaseIdentifier, " ", "_")
-	databaseIdentifier = strings.ReplaceAll(databaseIdentifier, "-", "_")
+	databaseIdentifier = strings.Replace(databaseIdentifier, " ", "_", -1)
+	databaseIdentifier = strings.Replace(databaseIdentifier, "-", "_", -1)
 
 	return snaker.SnakeToCamel(databaseIdentifier)
 }
 
 func ToGoFileName(databaseIdentifier string) string {
-	databaseIdentifier = strings.ReplaceAll(databaseIdentifier, " ", "_")
-	databaseIdentifier = strings.ReplaceAll(databaseIdentifier, "-", "_")
+	databaseIdentifier = strings.Replace(databaseIdentifier, " ", "_", -1)
+	databaseIdentifier = strings.Replace(databaseIdentifier, "-", "_", -1)
 
 	return strings.ToLower(databaseIdentifier)
 }
