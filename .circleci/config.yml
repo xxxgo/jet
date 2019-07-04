@@ -6,7 +6,7 @@ jobs:
   build:
     docker:
       # specify the version
-      - image: circleci/golang:1.11
+      - image: circleci/golang:1.8
 
       - image: circleci/postgres:10.6-alpine
         environment: # environment variables for primary container
@@ -39,7 +39,7 @@ jobs:
       - run: mkdir -p $TEST_RESULTS/unit-tests
       - run: mkdir -p $TEST_RESULTS/integration-tests
 
-      - run: go test -v #2>&1 | go-junit-report > $TEST_RESULTS/unit-tests/results.xml
+      - run: go test -v 2>&1 | go-junit-report > $TEST_RESULTS/unit-tests/results.xml
 
       - run:
           name: Waiting for Postgres to be ready
