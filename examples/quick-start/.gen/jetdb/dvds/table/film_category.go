@@ -9,7 +9,7 @@
 package table
 
 import (
-	"github.com/go-jet/jet/postgres"
+	"github.com/xxxgo/jet/v2/postgres"
 )
 
 var FilmCategory = newFilmCategoryTable()

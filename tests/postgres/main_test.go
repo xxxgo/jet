@@ -2,7 +2,7 @@ package postgres
 
 import (
 	"database/sql"
-	"github.com/go-jet/jet/tests/dbconfig"
+	"github.com/xxxgo/jet/v2/tests/dbconfig"
 	_ "github.com/lib/pq"
 	"github.com/pkg/profile"
 	"os"

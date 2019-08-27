@@ -2,8 +2,8 @@ package mysql
 
 import (
 	"bytes"
-	"github.com/go-jet/jet/generator/mysql"
-	"github.com/go-jet/jet/tests/dbconfig"
+	"github.com/xxxgo/jet/v2/generator/mysql"
+	"github.com/xxxgo/jet/v2/tests/dbconfig"
 	"gotest.tools/assert"
 	"io/ioutil"
 	"os"
@@ -35,7 +35,7 @@ func TestGenerator(t *testing.T) {
 }
 
 func TestCmdGenerator(t *testing.T) {
-	goInstallJet := exec.Command("sh", "-c", "go install github.com/go-jet/jet/cmd/jet")
+	goInstallJet := exec.Command("sh", "-c", "go install github.com/xxxgo/jet/v2/cmd/jet")
 	goInstallJet.Stderr = os.Stderr
 	err := goInstallJet.Run()
 	assert.NilError(t, err)
@@ -115,7 +115,7 @@ func assertFileNameEqual(t *testing.T, fileInfos []os.FileInfo, fileNames ...str
 var mpaaRatingEnumFile = `
 package enum
 
-import "github.com/go-jet/jet/mysql"
+import "github.com/xxxgo/jet/v2/mysql"
 
 var FilmRating = &struct {
 	G    mysql.StringExpression
@@ -136,7 +136,7 @@ var actorSQLBuilderFile = `
 package table
 
 import (
-	"github.com/go-jet/jet/mysql"
+	"github.com/xxxgo/jet/v2/mysql"
 )
 
 var Actor = newActorTable()

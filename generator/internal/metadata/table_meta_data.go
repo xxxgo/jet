@@ -2,7 +2,7 @@ package metadata
 
 import (
 	"database/sql"
-	"github.com/go-jet/jet/internal/utils"
+	"github.com/xxxgo/jet/v2/internal/utils"
 )
 
 // TableMetaData metadata struct

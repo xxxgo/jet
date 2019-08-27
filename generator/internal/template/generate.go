@@ -3,9 +3,9 @@ package template
 import (
 	"bytes"
 	"fmt"
-	"github.com/go-jet/jet/generator/internal/metadata"
-	"github.com/go-jet/jet/internal/jet"
-	"github.com/go-jet/jet/internal/utils"
+	"github.com/xxxgo/jet/v2/generator/internal/metadata"
+	"github.com/xxxgo/jet/v2/internal/jet"
+	"github.com/xxxgo/jet/v2/internal/utils"
 	"path/filepath"
 	"text/template"
 	"time"

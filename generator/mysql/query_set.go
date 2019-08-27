@@ -2,7 +2,7 @@ package mysql
 
 import (
 	"database/sql"
-	"github.com/go-jet/jet/generator/internal/metadata"
+	"github.com/xxxgo/jet/v2/generator/internal/metadata"
 	"strings"
 )
 

@@ -2,7 +2,7 @@ package postgres
 
 import (
 	"database/sql"
-	"github.com/go-jet/jet/generator/internal/metadata"
+	"github.com/xxxgo/jet/v2/generator/internal/metadata"
 )
 
 // postgresQuerySet is dialect query set for PostgreSQL

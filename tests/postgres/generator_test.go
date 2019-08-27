@@ -2,8 +2,8 @@ package postgres
 
 import (
 	"bytes"
-	"github.com/go-jet/jet/generator/postgres"
-	"github.com/go-jet/jet/tests/dbconfig"
+	"github.com/xxxgo/jet/v2/generator/postgres"
+	"github.com/xxxgo/jet/v2/tests/dbconfig"
 	"gotest.tools/assert"
 	"io/ioutil"
 	"os"
@@ -11,7 +11,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-jet/jet/tests/.gentestdata/jetdb/dvds/model"
+	"github.com/xxxgo/jet/v2/tests/.gentestdata/jetdb/dvds/model"
 )
 
 func TestGeneratedModel(t *testing.T) {
@@ -47,7 +47,7 @@ func TestGeneratedModel(t *testing.T) {
 const genTestDir2 = "./.gentestdata2"
 
 func TestCmdGenerator(t *testing.T) {
-	goInstallJet := exec.Command("sh", "-c", "go install github.com/go-jet/jet/cmd/jet")
+	goInstallJet := exec.Command("sh", "-c", "go install github.com/xxxgo/jet/v2/cmd/jet")
 	goInstallJet.Stderr = os.Stderr
 	err := goInstallJet.Run()
 	assert.NilError(t, err)
@@ -151,7 +151,7 @@ func assertFileNameEqual(t *testing.T, fileInfos []os.FileInfo, fileNames ...str
 var mpaaRatingEnumFile = `
 package enum
 
-import "github.com/go-jet/jet/postgres"
+import "github.com/xxxgo/jet/v2/postgres"
 
 var MpaaRating = &struct {
 	G    postgres.StringExpression
@@ -172,7 +172,7 @@ var actorSQLBuilderFile = `
 package table
 
 import (
-	"github.com/go-jet/jet/postgres"
+	"github.com/xxxgo/jet/v2/postgres"
 )
 
 var Actor = newActorTable()

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/go-jet/jet/execution"
-	"github.com/go-jet/jet/internal/jet"
+	"github.com/xxxgo/jet/v2/execution"
+	"github.com/xxxgo/jet/v2/internal/jet"
 	"gotest.tools/assert"
 	"io/ioutil"
 	"os"
@@ -36,7 +36,7 @@ func AssertExecErr(t *testing.T, stmt jet.Statement, db execution.DB, errorStr s
 
 func getFullPath(relativePath string) string {
 	goPath := os.Getenv("GOPATH")
-	return filepath.Join(goPath, "src/github.com/go-jet/jet/tests", relativePath)
+	return filepath.Join(goPath, "src/github.com/xxxgo/jet/v2/tests", relativePath)
 }
 
 // PrintJson print v as json
