@@ -2,14 +2,14 @@ package mysql
 
 import (
 	"fmt"
-	"github.com/go-jet/jet/internal/testutils"
-	"github.com/go-jet/jet/tests/.gentestdata/mysql/test_sample/model"
-	. "github.com/go-jet/jet/tests/.gentestdata/mysql/test_sample/table"
-	"github.com/go-jet/jet/tests/testdata/results/common"
+	"github.com/xxxgo/jet/internal/testutils"
+	"github.com/xxxgo/jet/tests/.gentestdata/mysql/test_sample/model"
+	. "github.com/xxxgo/jet/tests/.gentestdata/mysql/test_sample/table"
+	"github.com/xxxgo/jet/tests/testdata/results/common"
 	"github.com/google/uuid"
 	"time"
 
-	. "github.com/go-jet/jet/mysql"
+	. "github.com/xxxgo/jet/mysql"
 
 	"gotest.tools/assert"
 	"testing"

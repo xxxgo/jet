@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"github.com/go-jet/jet/internal/jet"
+	"github.com/xxxgo/jet/internal/jet"
 )
 
 // Dialect is implementation of MySQL dialect for SQL Builder serialisation.

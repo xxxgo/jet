@@ -1,7 +1,7 @@
 package jet
 
 import (
-	"github.com/go-jet/jet/internal/utils"
+	"github.com/xxxgo/jet/internal/utils"
 )
 
 // Clause interface

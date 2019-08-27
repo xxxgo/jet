@@ -7,10 +7,10 @@ Installation
 
 
 Use the bellow command to install jet
-	$ go get -u github.com/go-jet/jet
+	$ go get -u github.com/xxxgo/jet
 
 Install jet generator to GOPATH bin folder. This will allow generating jet files from the command line.
-	go install github.com/go-jet/jet/cmd/jet
+	go install github.com/xxxgo/jet/cmd/jet
 
 *Make sure GOPATH bin folder is added to the PATH environment variable.
 
@@ -26,10 +26,10 @@ Then next step is to import generated SQL Builder and Model files and write SQL 
 	import "some_path/.gen/jetdb/dvds/model"
 
 To write SQL queries for PostgreSQL import:
-	. "github.com/go-jet/jet/postgres"
+	. "github.com/xxxgo/jet/postgres"
 
 To write SQL queries for MySQL and MariaDB import:
-	. "github.com/go-jet/jet/mysql"
+	. "github.com/xxxgo/jet/mysql"
 *Dot import is used so that Go code resemble as much as native SQL. Dot import is not mandatory.
 
 Write SQL:
@@ -69,6 +69,6 @@ Store result into desired destination:
 	err := query.Query(db, &dest)
 
 Detail info about all features and use cases can be
-found at project wiki page - https://github.com/go-jet/jet/wiki.
+found at project wiki page - https://github.com/xxxgo/jet/wiki.
 */
 package jet

@@ -1,6 +1,6 @@
 package mysql
 
-import "github.com/go-jet/jet/internal/jet"
+import "github.com/xxxgo/jet/internal/jet"
 
 // SelectTable is interface for MySQL sub-queries
 type SelectTable interface {

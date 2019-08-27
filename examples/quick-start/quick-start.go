@@ -9,10 +9,10 @@ import (
 
 	// dot import so go code would resemble as much as native SQL
 	// dot import is not mandatory
-	. "github.com/go-jet/jet/examples/quick-start/.gen/jetdb/dvds/table"
-	. "github.com/go-jet/jet/postgres"
+	. "github.com/xxxgo/jet/examples/quick-start/.gen/jetdb/dvds/table"
+	. "github.com/xxxgo/jet/postgres"
 
-	"github.com/go-jet/jet/examples/quick-start/.gen/jetdb/dvds/model"
+	"github.com/xxxgo/jet/examples/quick-start/.gen/jetdb/dvds/model"
 )
 
 const (

@@ -1,9 +1,9 @@
 package postgres
 
 import (
-	"github.com/go-jet/jet/internal/testutils"
-	"github.com/go-jet/jet/tests/.gentestdata/jetdb/northwind/model"
-	. "github.com/go-jet/jet/tests/.gentestdata/jetdb/northwind/table"
+	"github.com/xxxgo/jet/internal/testutils"
+	"github.com/xxxgo/jet/tests/.gentestdata/jetdb/northwind/model"
+	. "github.com/xxxgo/jet/tests/.gentestdata/jetdb/northwind/table"
 	"gotest.tools/assert"
 	"testing"
 )

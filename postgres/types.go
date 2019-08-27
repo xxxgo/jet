@@ -1,6 +1,6 @@
 package postgres
 
-import "github.com/go-jet/jet/internal/jet"
+import "github.com/xxxgo/jet/internal/jet"
 
 // Statement is common interface for all statements(SELECT, INSERT, UPDATE, DELETE, LOCK)
 type Statement jet.Statement

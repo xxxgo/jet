@@ -3,7 +3,7 @@ package jet
 import (
 	"context"
 	"database/sql"
-	"github.com/go-jet/jet/execution"
+	"github.com/xxxgo/jet/execution"
 )
 
 //Statement is common interface for all statements(SELECT, INSERT, UPDATE, DELETE, LOCK)

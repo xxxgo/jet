@@ -21,7 +21,7 @@ var tableSQLBuilderTemplate = `
 package table
 
 import (
-	"github.com/go-jet/jet/{{dialect.PackageName}}"
+	"github.com/xxxgo/jet/{{dialect.PackageName}}"
 )
 
 var {{ToGoIdentifier .Name}} = new{{.GoStructName}}()
@@ -90,7 +90,7 @@ type {{ToGoIdentifier .Name}} struct {
 `
 var enumSQLBuilderTemplate = `package enum
 
-import "github.com/go-jet/jet/{{dialect.PackageName}}"
+import "github.com/xxxgo/jet/{{dialect.PackageName}}"
 
 var {{ToGoIdentifier $.Name}} = &struct {
 {{- range $index, $element := .Values}}

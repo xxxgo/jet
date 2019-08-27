@@ -1,6 +1,6 @@
 package mysql
 
-import "github.com/go-jet/jet/internal/jet"
+import "github.com/xxxgo/jet/internal/jet"
 
 // DeleteStatement is interface for MySQL DELETE statement
 type DeleteStatement interface {

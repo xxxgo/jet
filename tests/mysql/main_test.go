@@ -3,7 +3,7 @@ package mysql
 import (
 	"database/sql"
 	"flag"
-	"github.com/go-jet/jet/tests/dbconfig"
+	"github.com/xxxgo/jet/tests/dbconfig"
 
 	_ "github.com/go-sql-driver/mysql"
 

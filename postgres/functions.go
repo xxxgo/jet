@@ -1,6 +1,6 @@
 package postgres
 
-import "github.com/go-jet/jet/internal/jet"
+import "github.com/xxxgo/jet/internal/jet"
 
 // ROW is construct one table row from list of expressions.
 var ROW = jet.ROW

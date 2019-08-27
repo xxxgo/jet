@@ -2,7 +2,7 @@ package utils
 
 import (
 	"database/sql"
-	"github.com/go-jet/jet/internal/3rdparty/snaker"
+	"github.com/xxxgo/jet/internal/3rdparty/snaker"
 	"go/format"
 	"os"
 	"path/filepath"

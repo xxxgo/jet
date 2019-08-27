@@ -1,11 +1,11 @@
 package mysql
 
 import (
-	"github.com/go-jet/jet/internal/testutils"
-	. "github.com/go-jet/jet/mysql"
-	"github.com/go-jet/jet/tests/.gentestdata/mysql/dvds/enum"
-	"github.com/go-jet/jet/tests/.gentestdata/mysql/dvds/model"
-	. "github.com/go-jet/jet/tests/.gentestdata/mysql/dvds/table"
+	"github.com/xxxgo/jet/internal/testutils"
+	. "github.com/xxxgo/jet/mysql"
+	"github.com/xxxgo/jet/tests/.gentestdata/mysql/dvds/enum"
+	"github.com/xxxgo/jet/tests/.gentestdata/mysql/dvds/model"
+	. "github.com/xxxgo/jet/tests/.gentestdata/mysql/dvds/table"
 	"gotest.tools/assert"
 
 	"testing"

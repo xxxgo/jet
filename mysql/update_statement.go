@@ -1,6 +1,6 @@
 package mysql
 
-import "github.com/go-jet/jet/internal/jet"
+import "github.com/xxxgo/jet/internal/jet"
 
 // UpdateStatement is interface of SQL UPDATE statement
 type UpdateStatement interface {
