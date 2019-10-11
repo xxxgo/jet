@@ -69,11 +69,17 @@ var COUNT = jet.COUNT
 // EVERY is aggregate function. Returns true if all input values are true, otherwise false
 var EVERY = jet.EVERY
 
+// MAXf is aggregate function. Returns maximum value of expression across all input values
+var MAX = jet.MAX
+
 // MAXf is aggregate function. Returns maximum value of float expression across all input values
 var MAXf = jet.MAXf
 
 // MAXi is aggregate function. Returns maximum value of int expression across all input values
 var MAXi = jet.MAXi
+
+// MIN is aggregate function. Returns minimum value of expression across all input values.
+var MIN = jet.MIN
 
 // MINf is aggregate function. Returns minimum value of float expression across all input values
 var MINf = jet.MINf
@@ -86,6 +92,47 @@ var SUMf = jet.SUMf
 
 // SUMi is aggregate function. Returns sum of expression across all integer expression.
 var SUMi = jet.SUMi
+
+// -------------------- Window functions -----------------------//
+
+// ROW_NUMBER returns number of the current row within its partition, counting from 1
+var ROW_NUMBER = jet.ROW_NUMBER
+
+// RANK of the current row with gaps; same as row_number of its first peer
+var RANK = jet.RANK
+
+// DENSE_RANK returns rank of the current row without gaps; this function counts peer groups
+var DENSE_RANK = jet.DENSE_RANK
+
+// PERCENT_RANK calculates relative rank of the current row: (rank - 1) / (total partition rows - 1)
+var PERCENT_RANK = jet.PERCENT_RANK
+
+// CUME_DIST calculates cumulative distribution: (number of partition rows preceding or peer with current row) / total partition rows
+var CUME_DIST = jet.CUME_DIST
+
+// NTILE returns integer ranging from 1 to the argument value, dividing the partition as equally as possible
+var NTILE = jet.NTILE
+
+// LAG returns value evaluated at the row that is offset rows before the current row within the partition;
+// if there is no such row, instead return default (which must be of the same type as value).
+// Both offset and default are evaluated with respect to the current row.
+// If omitted, offset defaults to 1 and default to null
+var LAG = jet.LAG
+
+// LEAD returns value evaluated at the row that is offset rows after the current row within the partition;
+// if there is no such row, instead return default (which must be of the same type as value).
+// Both offset and default are evaluated with respect to the current row.
+// If omitted, offset defaults to 1 and default to null
+var LEAD = jet.LEAD
+
+// FIRST_VALUE returns value evaluated at the row that is the first row of the window frame
+var FIRST_VALUE = jet.FIRST_VALUE
+
+// LAST_VALUE returns value evaluated at the row that is the last row of the window frame
+var LAST_VALUE = jet.LAST_VALUE
+
+// NTH_VALUE returns value evaluated at the row that is the nth row of the window frame (counting from 1); null if no such row
+var NTH_VALUE = jet.NTH_VALUE
 
 //--------------------- String functions ------------------//
 
