@@ -18,7 +18,7 @@ var tableSQLBuilderTemplate = `
 	{{- end}}
 {{- end}}
 
-package table
+package {{param "package"}}
 
 import (
 	"github.com/xxxgo/jet/v2/{{dialect.PackageName}}"
@@ -34,8 +34,8 @@ type {{.GoStructName}} struct {
 	{{ToGoIdentifier .Name}} {{dialect.PackageName}}.Column{{.SqlBuilderColumnType}}
 {{- end}}
 
-	AllColumns     {{dialect.PackageName}}.IColumnList
-	MutableColumns {{dialect.PackageName}}.IColumnList
+	AllColumns     {{dialect.PackageName}}.ColumnList
+	MutableColumns {{dialect.PackageName}}.ColumnList
 }
 
 // creates new {{.GoStructName}} with assigned alias
@@ -62,8 +62,8 @@ func new{{.GoStructName}}() *{{.GoStructName}} {
 		{{ToGoIdentifier .Name}}: {{ToGoIdentifier .Name}}Column,
 {{- end}}
 
-		AllColumns:     {{dialect.PackageName}}.ColumnList( {{template "column-list" .Columns}} ),
-		MutableColumns: {{dialect.PackageName}}.ColumnList( {{template "column-list" .MutableColumns}} ),
+		AllColumns:     {{dialect.PackageName}}.ColumnList{ {{template "column-list" .Columns}} },
+		MutableColumns: {{dialect.PackageName}}.ColumnList{ {{template "column-list" .MutableColumns}} },
 	}
 }
 

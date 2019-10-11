@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/xxxgo/jet/v2/execution"
 	"github.com/xxxgo/jet/v2/internal/jet"
+	"github.com/xxxgo/jet/v2/internal/utils"
+	"github.com/xxxgo/jet/v2/qrm"
 	"gotest.tools/assert"
 	"io/ioutil"
 	"os"
@@ -15,7 +16,7 @@ import (
 )
 
 // AssertExec assert statement execution for successful execution and number of rows affected
-func AssertExec(t *testing.T, stmt jet.Statement, db execution.DB, rowsAffected ...int64) {
+func AssertExec(t *testing.T, stmt jet.Statement, db qrm.DB, rowsAffected ...int64) {
 	res, err := stmt.Exec(db)
 
 	assert.NilError(t, err)
@@ -28,7 +29,7 @@ func AssertExec(t *testing.T, stmt jet.Statement, db execution.DB, rowsAffected 
 }
 
 // AssertExecErr assert statement execution for failed execution with error string errorStr
-func AssertExecErr(t *testing.T, stmt jet.Statement, db execution.DB, errorStr string) {
+func AssertExecErr(t *testing.T, stmt jet.Statement, db qrm.DB, errorStr string) {
 	_, err := stmt.Exec(db)
 
 	assert.Error(t, err, errorStr)
@@ -60,9 +61,7 @@ func SaveJSONFile(v interface{}, testRelativePath string) {
 	filePath := getFullPath(testRelativePath)
 	err := ioutil.WriteFile(filePath, jsonText, 0644)
 
-	if err != nil {
-		panic(err)
-	}
+	utils.PanicOnError(err)
 }
 
 // AssertJSONFile check if data json representation is the same as json at testRelativePath
@@ -151,11 +150,39 @@ func AssertProjectionSerialize(t *testing.T, dialect jet.Dialect, projection jet
 }
 
 // AssertQueryPanicErr check if statement Query execution panics with error errString
-func AssertQueryPanicErr(t *testing.T, stmt jet.Statement, db execution.DB, dest interface{}, errString string) {
+func AssertQueryPanicErr(t *testing.T, stmt jet.Statement, db qrm.DB, dest interface{}, errString string) {
 	defer func() {
 		r := recover()
 		assert.Equal(t, r, errString)
 	}()
 
 	stmt.Query(db, dest)
+}
+
+// AssertFileContent check if file content at filePath contains expectedContent text.
+func AssertFileContent(t *testing.T, filePath string, contentBegin string, expectedContent string) {
+	enumFileData, err := ioutil.ReadFile(filePath)
+
+	assert.NilError(t, err)
+
+	beginIndex := bytes.Index(enumFileData, []byte(contentBegin))
+
+	//fmt.Println("-"+string(enumFileData[beginIndex:])+"-")
+
+	assert.DeepEqual(t, string(enumFileData[beginIndex:]), expectedContent)
+}
+
+// AssertFileNamesEqual check if all filesInfos are contained in fileNames
+func AssertFileNamesEqual(t *testing.T, fileInfos []os.FileInfo, fileNames ...string) {
+	assert.Equal(t, len(fileInfos), len(fileNames))
+
+	fileNamesMap := map[string]bool{}
+
+	for _, fileInfo := range fileInfos {
+		fileNamesMap[fileInfo.Name()] = true
+	}
+
+	for _, fileName := range fileNames {
+		assert.Assert(t, fileNamesMap[fileName], fileName+" does not exist.")
+	}
 }

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/xxxgo/jet/v2/generator/mysql"
 	"github.com/xxxgo/jet/v2/generator/postgres"
+	"github.com/xxxgo/jet/v2/internal/utils"
 	"github.com/xxxgo/jet/v2/tests/dbconfig"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
@@ -60,7 +61,7 @@ func initMySQLDB() {
 		cmd.Stdout = os.Stdout
 
 		err := cmd.Run()
-		panicOnError(err)
+		utils.PanicOnError(err)
 
 		err = mysql.Generate("./.gentestdata/mysql", mysql.DBConnection{
 			Host:     dbconfig.MySqLHost,
@@ -70,7 +71,7 @@ func initMySQLDB() {
 			DBName:   dbName,
 		})
 
-		panicOnError(err)
+		utils.PanicOnError(err)
 	}
 }
 
@@ -104,22 +105,16 @@ func initPostgresDB() {
 			SchemaName: schemaName,
 			SslMode:    "disable",
 		})
-		panicOnError(err)
+		utils.PanicOnError(err)
 	}
 }
 
 func execFile(db *sql.DB, sqlFilePath string) {
 	testSampleSql, err := ioutil.ReadFile(sqlFilePath)
-	panicOnError(err)
+	utils.PanicOnError(err)
 
 	_, err = db.Exec(string(testSampleSql))
-	panicOnError(err)
-}
-
-func panicOnError(err error) {
-	if err != nil {
-		panic(err)
-	}
+	utils.PanicOnError(err)
 }
 
 func printOnError(err error) {

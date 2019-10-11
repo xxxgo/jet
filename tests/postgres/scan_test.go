@@ -2,9 +2,9 @@ package postgres
 
 import (
 	"fmt"
-	"github.com/xxxgo/jet/v2/execution"
 	"github.com/xxxgo/jet/v2/internal/testutils"
 	. "github.com/xxxgo/jet/v2/postgres"
+	"github.com/xxxgo/jet/v2/qrm"
 	"github.com/xxxgo/jet/v2/tests/.gentestdata/jetdb/dvds/model"
 	. "github.com/xxxgo/jet/v2/tests/.gentestdata/jetdb/dvds/table"
 	"github.com/google/uuid"
@@ -57,7 +57,7 @@ func TestScanToValidDestination(t *testing.T) {
 
 	t.Run("global query function scan", func(t *testing.T) {
 		queryStr, args := query.Sql()
-		err := execution.Query(nil, db, queryStr, args, &struct{}{})
+		err := qrm.Query(nil, db, queryStr, args, &struct{}{})
 		assert.NilError(t, err)
 	})
 
