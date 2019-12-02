@@ -47,7 +47,7 @@ func main() {
 
 	flag.Usage = func() {
 		_, _ = fmt.Fprint(os.Stdout, `
-Jet generator 2.1.1
+Jet generator v2.1.3-dev
 
 Usage:
   -source string
